@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-api-user
+  labels:
+    app: udagram-api-user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: udagram-api-user
+  template:
+    metadata:
+      labels:
+        app: udagram-api-user
+    spec:
+      containers:
+      - env:
+        - name: AWS_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              key: awsaccesskey
+              name: awssecret
+        - name: AWS_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              key: awssecretkey
+              name: awssecret
+        - name: POSTGRES_USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: username
+              name: mysecret
+        - name: POSTGRES_USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: username
+              name: mysecret
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: password
+              name: mysecret
+        - name: POSTGRES_HOST
+          valueFrom:
+            secretKeyRef:
+              key: host
+              name: mysecret
+        - name: POSTGRES_DB
+          valueFrom:
+            secretKeyRef:
+              key: dbname
+              name: mysecret
+        - name: AWS_BUCKET
+          valueFrom:
+            secretKeyRef:
+              key: awsbucket
+              name: udagram-config-map
+        - name: AWS_REGION
+          valueFrom:
+            secretKeyRef:
+              key: awsregion
+              name: udagram-config-map
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: jwtsecret
+              name: udagram-config-map
+        - name: URL
+          valueFrom:
+            secretKeyRef:
+              key: url
+              name: udagram-config-map
+        image: folakemisola/udagram-api-user:v1
+        imagePullPolicy: "Always"
+        name: udagram-api-user
+        ports:
+        - containerPort: 8080
+
