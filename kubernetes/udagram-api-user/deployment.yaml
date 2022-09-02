@@ -31,11 +31,6 @@ spec:
             secretKeyRef:
               key: username
               name: mysecret
-        - name: POSTGRES_USERNAME
-          valueFrom:
-            secretKeyRef:
-              key: username
-              name: mysecret
         - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
@@ -53,22 +48,22 @@ spec:
               name: mysecret
         - name: AWS_BUCKET
           valueFrom:
-            secretKeyRef:
+            configMapKeyRef:
               key: awsbucket
               name: udagram-config-map
         - name: AWS_REGION
           valueFrom:
-            secretKeyRef:
+            configMapKeyRef:
               key: awsregion
               name: udagram-config-map
         - name: JWT_SECRET
           valueFrom:
-            secretKeyRef:
+            configMapKeyRef:
               key: jwtsecret
               name: udagram-config-map
         - name: URL
           valueFrom:
-            secretKeyRef:
+            configMapKeyRef:
               key: url
               name: udagram-config-map
         image: folakemisola/udagram-api-user:v1

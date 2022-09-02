@@ -29,4 +29,4 @@ after_success:
   - docker push folakemisola/udagram-api-feed:v1
   - docker push folakemisola/udagram-api-user:v1
   - docker push folakemisola/udagram-reverseproxy:v1
-  - docker push folakemisola/udagram-frontend:v1
+  - docker push folakemisola/udagram-frontend:v2
