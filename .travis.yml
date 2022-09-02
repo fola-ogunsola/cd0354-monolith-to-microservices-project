@@ -22,12 +22,12 @@ script:
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
   - docker tag udagram-reverseproxy folakemisola/udagram-reverseproxy:v1
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend folakemisola/udagram-frontend:v2
+  - docker tag udagram-frontend folakemisola/udagram-frontend:v4
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push folakemisola/udagram-api-feed:v1
   - docker push folakemisola/udagram-api-user:v1
   - docker push folakemisola/udagram-reverseproxy:v1
-  - docker push folakemisola/udagram-frontend:v2
+  - docker push folakemisola/udagram-frontend:v4
 
