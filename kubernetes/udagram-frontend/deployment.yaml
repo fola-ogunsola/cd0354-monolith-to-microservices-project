@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: udagram-frontend
-        image: folakemisola/udagram-frontend:v1
+        image: folakemisola/udagram-frontend:v4
         ports:
         - containerPort: 80
 
