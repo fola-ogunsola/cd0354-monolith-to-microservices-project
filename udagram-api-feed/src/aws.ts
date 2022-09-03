@@ -1,7 +1,7 @@
 import AWS = require('aws-sdk');
 import {config} from './config/config';
 
-
+console.log(config)
 // Configure AWS
 
 
