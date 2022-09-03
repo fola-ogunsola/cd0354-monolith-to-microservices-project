@@ -66,7 +66,7 @@ spec:
             configMapKeyRef:
               key: url
               name: udagram-config-map
-        image: folakemisola/udagram-api-user:v1
+        image: folakemisola/udagram-api-user:v2
         imagePullPolicy: "Always"
         name: udagram-api-user
         ports:
