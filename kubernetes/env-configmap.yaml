@@ -7,7 +7,7 @@ metadata:
   resourceVersion: 
   uid:
 data:
-  awsbucket: udacity-bucket-dev
-  awsregion: us-east-1
+  awsbucket: fola-bucket-dev
+  awsregion: us-west-2
   jwtsecret: testing
   url: http://localhost:8200
