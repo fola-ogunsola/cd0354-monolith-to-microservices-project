@@ -20,9 +20,12 @@ spec:
         name: reverseproxy
         imagePullPolicy: Always          
         resources:
+          limits:
+            cpu: 200m
+            memory: 204Mi
           requests:
-            memory: "40Mi"
-            cpu: "100m"      
+            cpu: 50m
+            memory: 102Mi   
         ports:
         - containerPort: 8080
       restartPolicy: Always
