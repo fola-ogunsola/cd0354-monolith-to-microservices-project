@@ -6,8 +6,8 @@ console.log(config)
 
 
 AWS.config.update({
-  accessKeyId: config.aws_secret_key,
-  secretAccessKey: config.aws_access_key
+  accessKeyId: config.aws_access_key,
+  secretAccessKey: config.aws_secret_key
 });
 
 export const s3 = new AWS.S3({
